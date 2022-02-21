@@ -5,7 +5,7 @@ const BULETOOTH = formatMessage => ({
     }),
     extensionId: 'BULETOOTH',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
+    supportDevice: ['arduinoUno', 'LGT8F328P', 'arduinoNano', 'arduinoMini', 'arduinoLeonardo',
         'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     author: 'Liu',
     iconURL: `asset/BULETOOTH.jpg`,
