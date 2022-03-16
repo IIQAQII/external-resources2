@@ -17,7 +17,7 @@ function addGenerator (Blockly) {
 
         Blockly.Arduino.setups_.sound_value = `pinMode(${pin},INPUT);`;
 		
-        const code = `analogRead(${pin})`;
+        const code = `map(analogRead(${pin}), 0, 1900, 2, 600)`;
         return [code, Blockly.Arduino.ORDER_ATOMIC];
     };
 
