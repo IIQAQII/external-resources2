@@ -12,7 +12,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 {
 	if (prePin == pin && preDir == turn && prePwm == pwm) { 
 			
-		//Serial.println("≤ª÷¥––");
+		//Serial.println("‰∏çÊâßË°å");
 		return; 
 	
 	}
@@ -20,10 +20,10 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 		prePin = pin;
 		preDir = turn;
 		prePwm = pwm;
-		//Serial.println("÷¥––");
+		//Serial.println("ÊâßË°å");
 		switch (pin)
 		{
-			case 0:   //»´≤øÕ£÷π
+			case 0:   //ÂÖ®ÈÉ®ÂÅúÊ≠¢
 
 				digitalWrite(4, 0);
 				analogWrite(5, 0);
@@ -51,7 +51,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A0, 0);
-					analogWrite(11, pwm);
+					analogWrite(11, pwm*0.5);
 				}
 				else if (turn == 0) {
 					digitalWrite(A0, 0);
@@ -72,7 +72,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A2, 0);
-					analogWrite(10, pwm);
+					analogWrite(10, pwm*0.5);
 				}
 				else if (turn == 0) {
 					digitalWrite(A2, 0);
@@ -91,7 +91,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A1, 0);
-					analogWrite(3, pwm);
+					analogWrite(3, pwm*0.5);
 				}
 				else if (turn == 0) {
 					digitalWrite(A1, 0);
@@ -111,7 +111,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A3, 0);
-					analogWrite(9, pwm);
+					analogWrite(9, pwm*0.5);
 				}
 				else if (turn == 0) {
 					digitalWrite(A3, 0);
@@ -131,7 +131,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(7, 0);
-					analogWrite(6, pwm);
+					analogWrite(6, pwm*0.5);
 				}
 				else if (turn == 0) {
 					digitalWrite(7, 0);
@@ -140,7 +140,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				break;
 			case 7:
 				pinMode(4, OUTPUT);
-				// pinMode(5, OUTPUT); //…Ë÷√∂Àø⁄ ‰≥ˆ∑Ω Ω
+				// pinMode(5, OUTPUT); //ËÆæÁΩÆÁ´ØÂè£ËæìÂá∫ÊñπÂºè
 				if (turn == 2)
 				{
 					digitalWrite(4, 0);
