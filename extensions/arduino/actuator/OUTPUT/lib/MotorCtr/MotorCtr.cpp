@@ -51,7 +51,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A0, 0);
-					analogWrite(11, pwm*0.5);
+					analogWrite(11, pwm);
 				}
 				else if (turn == 0) {
 					digitalWrite(A0, 0);
@@ -72,7 +72,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A2, 0);
-					analogWrite(10, pwm*0.5);
+					analogWrite(10, pwm);
 				}
 				else if (turn == 0) {
 					digitalWrite(A2, 0);
@@ -91,7 +91,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A1, 0);
-					analogWrite(3, pwm*0.5);
+					analogWrite(3, pwm);
 				}
 				else if (turn == 0) {
 					digitalWrite(A1, 0);
@@ -111,7 +111,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(A3, 0);
-					analogWrite(9, pwm*0.5);
+					analogWrite(9, pwm);
 				}
 				else if (turn == 0) {
 					digitalWrite(A3, 0);
@@ -131,7 +131,7 @@ void MotorCtr::RunMotor(int16_t pin, int16_t turn, int16_t pwm)
 				else if (turn == 2)
 				{
 					digitalWrite(7, 0);
-					analogWrite(6, pwm*0.5);
+					analogWrite(6, pwm);
 				}
 				else if (turn == 0) {
 					digitalWrite(7, 0);
