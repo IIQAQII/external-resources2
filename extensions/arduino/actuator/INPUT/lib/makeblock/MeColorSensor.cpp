@@ -459,6 +459,7 @@ uint8_t MeColorSensor::Returnresult(void)
   uint8_t result,r,g,b;
 
   MeColorSensor::ColorDataRead();
+  Redvalue += 300;
 
   /*********************************/
   if(Redvalue < 1200 && Greenvalue < 1700 && Bluevalue < 1200)
@@ -518,11 +519,11 @@ uint8_t MeColorSensor::Returnresult(void)
         {
             result = BLACK;
         }
-    }
+    }/*
     else if((Greenvalue < Redvalue + Bluevalue) && (Greenvalue + Redvalue + Bluevalue >700))
     {
         result = WHITE;
-    }
+    }*/
     else
     {
         result = BLACK;
@@ -570,10 +571,14 @@ uint8_t MeColorSensor::Returnresult(void)
     else if(r >= 10 && g <= 7 && b < 2)
     {
       result = RED;
-    }
+    }/*
     else if(r >= 4 && g >= 9 && b >= 4)
     {
       result = WHITE;
+    }*/
+    else if(r > g && r > b)
+    {
+      result = RED;
     }
     else
     {
