@@ -17,7 +17,7 @@ function addGenerator (Blockly) {
 
         Blockly.Arduino.setups_.sound_value = `pinMode(${pin},INPUT);`;
 		
-        const code = `map(analogRead(${pin}), 0, 1900, 2, 600)`;
+        const code = `analogRead(${pin})`;
         return [code, Blockly.Arduino.ORDER_ATOMIC];
     };
 
@@ -61,7 +61,8 @@ function addGenerator (Blockly) {
         Blockly.Arduino.includes_.color_value = `#include <MeColorSensor.h>\n#include <MeMCore.h>\n#include <Wire.h>`;
 		Blockly.Arduino.definitions_.color_value = `MeColorSensor colorsensor_1(1);`;
         Blockly.Arduino.definitions_.color_value1 = `uint16_t getSingleColorValue(MeColorSensor colorSensor,uint8_t colorType)\n{\n  long rgbcode = 0;\n  colorSensor.ColorDataRead();\n  if(colorType < 3)\n  {\n     rgbcode = colorSensor.ReturnColorCode();\n     switch(colorType)\n     {\n        case 0: return (uint8_t)(rgbcode>>16);\n        case 1: return (uint8_t)(rgbcode>>8);\n        case 2: return (uint8_t)rgbcode;\n        default: return 0;\n     }\n  }\n  else if(colorType==3)\n  {\n      return colorSensor.ReturnGrayscale();\n  }\n  else\n  {\n      return 0;\n  }\n}\n`;
-        Blockly.Arduino.setups_.color_value = `colorsensor_1.SensorInit();`;
+        Blockly.Arduino.setups_.color_value = `colorsensor_1.SensorInit();\nSerial.begin(9600);`;
+        Blockly.Arduino.loops_.color_value = 'Serial.println("");';
 		
         const code = `getSingleColorValue(colorsensor_1,${color})`;
         return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -73,7 +74,8 @@ function addGenerator (Blockly) {
         Blockly.Arduino.includes_.color_value = `#include <MeColorSensor.h>\n#include <MeMCore.h>\n#include <Wire.h>`;
 		Blockly.Arduino.definitions_.color_value = `MeColorSensor colorsensor_1(1);`;
         Blockly.Arduino.definitions_.color_value2 = `uint8_t detectedColor(MeColorSensor colorSensor,uint8_t colorType)\n{\nif(colorType==colorSensor.Returnresult())\n{\nreturn 1;\n}\nreturn 0;\n}\n`;
-        Blockly.Arduino.setups_.color_value = `colorsensor_1.SensorInit();`;
+        Blockly.Arduino.setups_.color_value = `colorsensor_1.SensorInit();\nSerial.begin(9600);`;
+        Blockly.Arduino.loops_.color_value = 'Serial.println("");';
 		
         const code = `detectedColor(colorsensor_1,${color})`;
         return [code, Blockly.Arduino.ORDER_ATOMIC];
