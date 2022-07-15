@@ -93,7 +93,6 @@
 #ifndef MeConfig_H
 #define MeConfig_H
 
-#include <utility/Servo.h>
 #include <utility/Wire.h>
 #include <utility/EEPROM.h>
 #include <utility/SoftwareSerial.h>
