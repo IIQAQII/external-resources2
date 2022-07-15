@@ -75,7 +75,7 @@ function addGenerator (Blockly) {
 		Blockly.Arduino.definitions_.color_value = `MeColorSensor colorsensor_1(1);`;
         Blockly.Arduino.definitions_.color_value2 = `uint8_t detectedColor(MeColorSensor colorSensor,uint8_t colorType)\n{\nif(colorType==colorSensor.Returnresult())\n{\nreturn 1;\n}\nreturn 0;\n}\n`;
         Blockly.Arduino.setups_.color_value = `colorsensor_1.SensorInit();\nSerial.begin(9600);`;
-        Blockly.Arduino.loops_.color_value = 'Serial.println("");';
+        Blockly.Arduino.loops_.color_value = 'Serial.println("");\nSerial.println("");\nSerial.println("");';
 		
         const code = `detectedColor(colorsensor_1,${color})`;
         return [code, Blockly.Arduino.ORDER_ATOMIC];
