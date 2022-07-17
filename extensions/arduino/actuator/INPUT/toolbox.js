@@ -25,9 +25,6 @@ function addToolbox () {
     <block type="color_value2" id="color_value2">
         <field name="COLOR">0</field>
     </block>
-    <block type="color_value" id="color_value">
-        <field name="COLOR">2</field>
-    </block>
 </category>`;
 }
 
